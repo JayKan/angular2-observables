@@ -1,0 +1,41 @@
+html {
+    font-family: "Roboto Mono", Roboto, sans-serif;
+}
+.layout-padding {
+    padding: 22px;
+}
+.layout-margin {
+    margin: 8px;
+}
+.page-content {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+}
+.mdl-navigation a.nav-link.router-link-active::after {
+    height: 3px;
+    width: 100%;
+    display: block;
+    content: " ";
+    bottom: 0;
+    left: 0;
+    position: inherit;
+    background: rgb(18, 18, 18);
+}
+.mdl-navigation a.nav-link.router-link-active {
+    color: rgba(0,0,0, 0.8);
+    font-weight: 700;
+}
+.mdl-navigation a.nav-link {
+    padding: 0 30px;
+    width: 145px;
+    color: rgba(0,0,0,0.6);
+    text-align: center;
+    text-decoration: none;
+}
+
+hr.border {
+    border-top-color: rgba(0, 0, 0, .8);
+    border-top-width: 2px;
+    margin-top: 10px;
+}
