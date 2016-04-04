@@ -14,13 +14,24 @@ const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${AP
     .typehead-demo p {
        margin-bottom: 5px;
     }
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+    }
+    li.video-row {          
+      margin-bottom: 2rem;     
+      border: 0;
+      box-shadow: 1px 1px 6px 0 #C6C4C4;
+      cursor: pointer;        
+    }
   `],
   template: `
     <div class="typehead-demo">
       <p>Search youtube videos:</p>        
       <input type="text" class="form-control" [ngFormControl]="searchInput">
       <ul>
-        <li *ngFor="#video of videos | async">{{ video | json }}</li>
+        <li *ngFor="#video of videos | async" class="video-row">{{ video | json }}</li>
       </ul>
     </div>
   `
@@ -44,12 +55,12 @@ export class TypeHeadComponent implements OnInit {
           })
         })
         .map(response => {
-          return response.items.map(video => this.parseItemData(video))
+          return response.items.map(video => TypeHeadComponent.parseItemData(video))
         })
     ;
   }
 
-  private parseItemData(video) {
+  static parseItemData(video) {
     return {
       image: video.snippet.thumbnails.high.url,
       title: video.snippet.title,
