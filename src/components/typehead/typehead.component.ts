@@ -30,19 +30,30 @@ export class TypeHeadComponent implements OnInit {
 
   searchInput: Control = new Control('');
   videos: Observable<any>;
-
+  
   constructor(private _http: Http) {}
-
+  
   ngOnInit(): void {
     this.videos = this.searchInput.valueChanges
         .debounceTime(200) // optionally debounce
+        .filter(inputText => inputText.length > 2)
         .map(inputText => makeURL(inputText))
-        //flatMap won't cancel in-flight requests, switchMap will...
-        //.flatMap(url => http.get(url).map(res => res.json()))
-        .switchMap(url => this._http.get(url).map(res => res.json()))
-        .map(response => response.items);
+        .switchMap(url => {
+          return this._http.get(url).map(res => {
+            return res.json()
+          })
+        })
+        .map(response => {
+          return response.items.map(video => this.parseItemData(video))
+        })
+    ;
+  }
 
-    console.log('Videos: ', this.videos);
-
+  private parseItemData(video) {
+    return {
+      image: video.snippet.thumbnails.high.url,
+      title: video.snippet.title,
+      created: new Date(video.snippet.publishedAt)
+    }
   }
 }
