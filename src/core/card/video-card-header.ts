@@ -1,4 +1,4 @@
-import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from 'angular2/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from 'angular2/core';
 
 @Component({
   selector: 'video-card-header',
@@ -13,9 +13,6 @@ import { Component, ViewEncapsulation, ChangeDetectionStrategy, OnInit } from 'a
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class VideoCardHeader implements OnInit {
-  ngOnInit(): void {
-    console.log('---------- Video-card-header Init() ----------');
-  }
+export class VideoCardHeader {
   
 }

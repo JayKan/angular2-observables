@@ -7,14 +7,19 @@ video-card {
     font-family: Roboto, "Helvetica Neue", sans-serif;
     background: white;
     margin: 0 16px 16px 0;
-    width: 350px;
+    width: 100%;
+    max-width: 865px;
 }
 
+video-card:first-child {
+    margin-top: 20px;
+}
 img {
     background-color: gray;
 }
 
 video-card:hover {
+    cursor: pointer;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6);
     transition: all 0.3s cubic-bezier(0.55, 0, 0.55, 0.2);
 }
@@ -24,6 +29,7 @@ video-card:hover {
 }
 
 video-card,
+video-card-title,
 video-card-subtitle,
 video-card-content,
 video-card-actions {
@@ -32,8 +38,12 @@ video-card-actions {
 }
 
 video-card-title {
-    font-size: 24px;
-    font-weight: 400;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.54);
+}
+
+video-card-description {
+    font-size: 15px;
 }
 
 video-card-subtitle {
@@ -43,11 +53,12 @@ video-card-subtitle {
 
 video-card-content {
     font-size: 14px;
+    margin: 0 -8px;
 }
 
 video-card-actions {
-    margin-left: -16px;
-    margin-right: -16px;
+    margin-left: -8px;
+    margin-right: -8px;
     padding: 8px 0;
 }
 
@@ -148,6 +159,14 @@ video-card-title-group {
     video-card-header {
         margin: -8px 0 0 0;
     }
+
+    video-card-actions,
+    video-card-content {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+
 }
 
 /* FIRST/LAST CHILD ADJUSTMENTS */

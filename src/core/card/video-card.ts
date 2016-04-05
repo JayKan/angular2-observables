@@ -1,9 +1,4 @@
-import { 
-  Component, 
-  ViewEncapsulation, 
-  ChangeDetectionStrategy, 
-  OnInit 
-} from 'angular2/core';
+import { Component, ViewEncapsulation, ChangeDetectionStrategy } from 'angular2/core';
 
 /*
  -------------------
@@ -27,8 +22,4 @@ import {
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class VideoCard implements OnInit {
-  ngOnInit(): void {
-    console.log('----------- Video Card init() -----------');
-  }
-}
+export class VideoCard {}
