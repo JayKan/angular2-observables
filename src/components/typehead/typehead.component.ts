@@ -41,26 +41,26 @@ const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${AP
         <div class="row">
           <p>Search youtube videos:</p>        
           <input type="text" class="form-control" [ngFormControl]="searchInput">
-          <ul>
-            <li *ngFor="#video of videos" class="video-row">{{ video | json }}</li>
-          </ul>
+          <!--<ul>-->
+            <!--<li *ngFor="#video of videos" class="video-row">{{ video | json }}</li>-->
+          <!--</ul>-->
         </div>
-        <!--<div class="row" *ngFor="#video of videos">-->
-          <!--<video-card>-->
-            <!--<video-card-title-group>-->
-              <!--<video-card-title>{{ video.title }}</video-card-title>            -->
-              <!--<video-card-description>-->
-                <!--<p>{{ video.description }}</p>-->
-              <!--</video-card-description>-->
-              <!--<img video-card-lg-image [src]="video.image">-->
-            <!--</video-card-title-group>-->
-            <!---->
-            <!--<video-card-actions>-->
-              <!--<button class="btn btn-default">Like</button>-->
-              <!--<button class="btn btn-danger">Share</button>                              -->
-            <!--</video-card-actions>-->
-          <!--</video-card>-->
-        <!--</div>-->
+        <div class="row" *ngFor="#video of videos">
+          <video-card>
+            <video-card-title-group>
+              <video-card-title>{{ video.title }}</video-card-title>            
+              <video-card-description>
+                <p>{{ video.description }}</p>
+              </video-card-description>
+              <img video-card-lg-image [src]="video.image">
+            </video-card-title-group>
+            
+            <video-card-actions>
+              <button class="btn btn-default">Like</button>
+              <button class="btn btn-danger">Share</button>                              
+            </video-card-actions>
+          </video-card>
+        </div>
       </div>       
     </div>
   `,
