@@ -11,29 +11,7 @@ const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${AP
 
 @Component({
   selector: 'typehead-demo',
-  styles: [`
-    .typehead-demo p {
-       margin-bottom: 5px;
-    }
-    ul {
-        list-style: none;
-        padding: 0;
-        margin-top: 20px;
-    }
-    li.video-row {          
-      margin-bottom: 2rem;     
-      border: 0;
-      box-shadow: 1px 1px 6px 0 #C6C4C4;
-      cursor: pointer;        
-    }
-    .typehead-demo .form-control {
-        max-width: 865px;
-        border-radius: 0;
-    }
-    .typehead-demo .form-control:focus {
-        border-color: rgb(51, 159, 80);
-    }
-  `],
+  styleUrls: ['components/typehead/typehead.component.css'],
   directives: [VIDEO_CARD_DIRECTIVES],
   template: `
     <div class="typehead-demo">          
