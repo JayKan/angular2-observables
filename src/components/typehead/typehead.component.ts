@@ -1,29 +1,26 @@
 import { Component, OnInit, ViewEncapsulation } from 'angular2/core';
-import { Control } from 'angular2/common';
+import { Control, FORM_DIRECTIVES } from 'angular2/common';
 import { Observable } from 'rxjs/Observable';
 import { Http } from 'angular2/http';
 import { VIDEO_CARD_DIRECTIVES } from '../../core/card/card';
 import 'rxjs/Rx';
 
 const BASE_URL: string = 'https://www.googleapis.com/youtube/v3/search';
-const API_TOKEN: string = 'AIzaSyAJk1xUI72YYfBMgEc84gjHUX-k2AN6-B0';
-const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${API_TOKEN}`;
+const TOKEN: string = 'AIzaSyAJk1xUI72YYfBMgEc84gjHUX-k2AN6-B0';
+const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${TOKEN}`;
 
 @Component({
   selector: 'typehead-demo',
   styleUrls: ['components/typehead/typehead.component.css'],
-  directives: [VIDEO_CARD_DIRECTIVES],
+  directives: [VIDEO_CARD_DIRECTIVES, FORM_DIRECTIVES],
   template: `
-    <div class="typehead-demo">          
-      <div class="container">
+    <div class="typehead-demo">      
+      <div class="container margin-top-30">
         <div class="row">
-          <p>Search youtube videos:</p>        
-          <input type="text" class="form-control" [ngFormControl]="searchInput">
-          <!--<ul>-->
-            <!--<li *ngFor="#video of videos" class="video-row">{{ video | json }}</li>-->
-          <!--</ul>-->
+          <p>Public Youtube API Search:</p>        
+          <input type="text" class="form-control" [ngFormControl]="youtubeSearch">        
         </div>
-        <div class="row" *ngFor="#video of videos">
+        <div class="row" *ngFor="#video of youtubeResults | async">
           <video-card>
             <video-card-title-group>
               <video-card-title>{{ video.title }}</video-card-title>            
@@ -47,15 +44,14 @@ const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${AP
 
 export class TypeHeadComponent implements OnInit {
 
-  searchInput: Control = new Control('');
-  videos: Observable<any>;
-  
+  youtubeSearch: Control = new Control('');
+  youtubeResults: Observable<any[]>;
+
   constructor(private _http: Http) {}
   
   ngOnInit(): void {
-    this.searchInput.valueChanges
+    this.youtubeResults = this.youtubeSearch.valueChanges
       .debounceTime(200) // optionally debounce
-      .filter(inputText => inputText.length > 2)
       .map(inputText => makeURL(inputText))
       .switchMap(url => {
         return this._http.get(url).map(res => {
@@ -65,13 +61,9 @@ export class TypeHeadComponent implements OnInit {
       .map(response => {
         return response.items.map(video => TypeHeadComponent.parseItemData(video))
       })
-      .subscribe(response => {
-        console.log('Subscribe response: ', response);
-        this.videos = response;
-      })
     ;
   }
-
+  
   static parseItemData(video) {
     return {
       image: video.snippet.thumbnails.high.url,

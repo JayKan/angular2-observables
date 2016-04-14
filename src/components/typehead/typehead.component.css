@@ -19,3 +19,12 @@ li.video-row {
 .typehead-demo .form-control:focus {
     border-color: rgb(51, 159, 80);
 }
+.margin-top-30 {
+    margin-top: 30px;
+}
+.box {
+    float: left;
+    width: 140px;
+    height: 140px;
+    padding: 5px;
+}
