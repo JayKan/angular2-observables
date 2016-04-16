@@ -1,5 +1,13 @@
 # Learning observables with Angular2
 
+# Observables
+
+Observables are just functions that tie a **producer** to a **consumer** and return a **cancellation** function.
+
+# Operators
+
+Operators are also functions that simply return an **observable** that subscribes to another observable and (generally) join their subscriptions.
+
 # How to start
 
 **Note** that this seed project requires node v4.x.x or higher and npm 2.14.7.
