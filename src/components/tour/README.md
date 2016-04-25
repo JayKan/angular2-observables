@@ -9,6 +9,10 @@
 # Transforming Operators
 
 ### Scan:
-* The scan operator applies a function to the first item emitted by the **source Observable** and then **emits** the **result** of that function as its own first emission. It also feeds the result of the function back into the function along with the second emitted by the source Observable in order to **generate** its second emission. It continues to feed back its own subsequent emissions along with the subsequent emissions from the **source Observable** in order to create the rest of its sequence. [This sort of operator is sometimes called **"accumulator"** in other contexts.
+* The **Scan** operator applies a function to the first item emitted by the **source Observable** and then **emits** the **result** of that function as its own first emission. It also feeds the result of the function back into the function along with the second emitted by the source Observable in order to **generate** its second emission. It continues to feed back its own subsequent emissions along with the subsequent emissions from the **source Observable** in order to create the rest of its sequence. [This sort of operator is sometimes called **"accumulator"** in other contexts.
 * To visualize how **scan()** operator works, please [visit](http://rxmarbles.com/#scan) here.  
+
+### Map: 
+* The **Map** operator applies a projected function to each item emitted by the **source Observable**, and returns an **observable** that emits the results of those functions applied.
+* To visualize how **map()** operator works, please [visit](http://rxmarbles.com/#map) here.
 
