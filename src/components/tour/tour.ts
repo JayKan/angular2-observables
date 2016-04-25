@@ -52,12 +52,9 @@ export class TouristComponent implements OnInit {
       this._neighborhoodAPI.add( new Neighborhood('Jay Kan') );
       this._neighborhoodAPI.add( new Neighborhood('Michael Jordan') );
     });
-
   }
 
   add() {
     this._neighborhoodAPI.add( new Neighborhood('Another One'));
   }
-  
-
 }
