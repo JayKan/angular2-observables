@@ -23,6 +23,7 @@
 /// <reference path="main/ambient/run-sequence/run-sequence.d.ts" />
 /// <reference path="main/ambient/selenium-webdriver/selenium-webdriver.d.ts" />
 /// <reference path="main/ambient/serve-static/serve-static.d.ts" />
+/// <reference path="main/ambient/socket.io-client/socket.io-client.d.ts" />
 /// <reference path="main/ambient/systemjs/systemjs.d.ts" />
 /// <reference path="main/ambient/through2/through2.d.ts" />
 /// <reference path="main/ambient/vinyl-source-stream/vinyl-source-stream.d.ts" />
