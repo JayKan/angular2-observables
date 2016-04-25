@@ -12,6 +12,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="./styles/material.css">
   <link rel="stylesheet" href="./styles/custom.css">
+  <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
   <!-- IE required polyfills (from CDN), in this exact order -->
   <!-- inject:css -->
   <!-- endinject -->
@@ -44,7 +45,14 @@
     "defaultJSExtensions": true,
     "transpiler": "typescript",
     "map": {
-      "rxjs": "/node_modules/rxjs/Rx.js"
+      "rxjs": "/node_modules/rxjs/Rx.js",
+      'angularfire2': "/node_modules/angularfire2"
+    },
+    "packages": {
+      "angularfire2": {
+        defaultExtension: 'js',
+        main: 'angularfire2.js'
+      }
     }
   });
 </script>
