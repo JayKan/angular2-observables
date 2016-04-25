@@ -1,0 +1,13 @@
+.margin-bottom-20 {
+    margin-bottom: 20px;
+}
+span.value {
+    color: #b31b40;
+    font-size: 14px;
+    display: block;
+    margin-bottom:5px;
+}
+
+span.value strong {
+    font-weight: 500;
+}

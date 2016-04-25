@@ -28,21 +28,7 @@ import { Observable } from 'rxjs/Rx';
   directives: [PeopleCountComponent],
   providers: [NeighborhoodService, SocketService],
   encapsulation: ViewEncapsulation.None,
-  styles: [`
-  .margin-bottom-20 {
-    margin-bottom: 20px;
-  }
-  span.value {
-    color: #b31b40;
-    font-size: 14px;   
-    display: block;
-    margin-bottom:5px;
-  }
-  
-  span.value strong {        
-    font-weight: 500;      
-  }
-  `]
+  styleUrls: ['components/tour/tour.component.css']
 })
 
 export class TouristComponent implements OnInit {
@@ -59,7 +45,7 @@ export class TouristComponent implements OnInit {
         'Central Amsterdam',
         'Netherlands'
     );
-    
+
     this.$neighborhoods = this._neighborhoodAPI.$neighborhoods;
 
     setTimeout(() => {
