@@ -3,6 +3,7 @@ import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/route
 import { HTTP_PROVIDERS } from 'angular2/http';
 import { TypeHeadComponent } from '../components/typehead/typehead';
 import { TouristComponent } from '../components/tour/tour';
+import { WeatherDemo } from '../components/weather/weather';
 
 @Component({
   selector: 'demo-app',
@@ -15,7 +16,8 @@ import { TouristComponent } from '../components/tour/tour';
 
 @RouteConfig([
   { path: '/typehead', name: 'Typehead', component: TypeHeadComponent, useAsDefault: true },
-  { path: '/tourist',  name: 'Tourist',  component: TouristComponent                      }
+  { path: '/tourist',  name: 'Tourist',  component: TouristComponent                      },
+  { path: '/weather',  name: 'Weather', component: WeatherDemo                            }
 ])
 
 export class AppComponent {
