@@ -47,6 +47,7 @@ export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencie
   { src: 'angular2/bundles/angular2.js',  inject: 'libs', dest: JS_DEST             },
   { src: 'angular2/bundles/router.js',    inject: 'libs', dest: JS_DEST             },
   { src: 'angular2/bundles/http.js',      inject: 'libs', dest: JS_DEST             },
+  { src: 'socket.io-client/socket.io.js', inject: 'libs', dest: JS_DEST             }
 ]);
 
 export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
