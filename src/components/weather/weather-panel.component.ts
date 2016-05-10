@@ -22,7 +22,7 @@ declare var Firebase: any;
       <th>Precip</th>
     </tr>
     
-    <tr *ngFor="#d of hourly | async">
+    <tr *ngFor="let d of hourly | async">
       <td>{{ d.time | secondsToDate | date: 'H:m:s' }}</td>
       <td>{{ d.temperature }}</td>
       <td>{{ d.precipIntensity }}</td>
@@ -48,7 +48,6 @@ export class WeatherPanel implements OnInit {
     this.currently = observableFirebaseObject(city.child('currently'));
 
     this.currently.subscribe(res => {
-      console.log('Got currenlty observable resposne: ', res);
       this.current = res;
     });
 

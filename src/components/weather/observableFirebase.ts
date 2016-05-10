@@ -3,7 +3,6 @@ import { Observable } from 'rxjs/Rx';
 export function observableFirebaseObject<T>(ref: any): Observable<T> {
   return Observable.create(function(observer: any) {
     function value(snapshot: any) {
-      console.log('Snapshot: ', snapshot);
       observer.next(snapshot.val());
     }
     ref.on('value', value);

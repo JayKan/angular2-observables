@@ -20,7 +20,7 @@ const makeURL = (query): string => `${BASE_URL}?q=${query}&part=snippet&key=${TO
           <p>Public Youtube API Search:</p>        
           <input type="text" class="form-control" [ngFormControl]="youtubeSearch">        
         </div>
-        <div class="row" *ngFor="#video of youtubeResults | async">
+        <div class="row" *ngFor="let video of youtubeResults | async">
           <video-card>
             <video-card-title-group>
               <video-card-title>{{ video.title }}</video-card-title>            

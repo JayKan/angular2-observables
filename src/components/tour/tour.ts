@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Rx';
     <div class="container padding-0">      
       <h4>Tourist on a Trip</h4>    
       <button class="btn btn-default btn-primary margin-bottom-20" (click)="add()">Add Another Tour</button>
-      <div class="row" *ngFor="#neighborhood of $neighborhoods | async">
+      <div class="row" *ngFor="let neighborhood of $neighborhoods | async">
         <div class="col-md-12">
           <span class="value">
             <strong>Model value</strong>: {{ neighborhood.TTAmount }}

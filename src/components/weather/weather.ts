@@ -10,7 +10,7 @@ import { WeatherPanel } from './weather-panel.component';
       <p>The purpose of this application is to show how Angular 2 development can be very declarative, among other things.</p>
       
       <div class="row">
-        <div *ngFor="#c of cities" class="col-md-4">
+        <div *ngFor="let c of cities" class="col-md-4">
           <weather-panel [city]="c"></weather-panel>
         </div>
       </div>    
