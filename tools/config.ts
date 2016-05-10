@@ -43,11 +43,11 @@ export const DEV_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencie
   { src: 'reflect-metadata/Reflect.js', inject: 'shims', dest: JS_DEST              },
   { src: 'es6-shim/es6-shim.js', inject: 'shims', dest: JS_DEST                     },
   { src: 'rxjs/bundles/Rx.js', inject: 'libs', dest: JS_DEST                        },
-  { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: JS_DEST   },
-  { src: 'angular2/bundles/angular2.js',  inject: 'libs', dest: JS_DEST             },
-  { src: 'angular2/bundles/router.js',    inject: 'libs', dest: JS_DEST             },
-  { src: 'angular2/bundles/http.js',      inject: 'libs', dest: JS_DEST             },
-  { src: 'socket.io-client/socket.io.js', inject: 'libs', dest: JS_DEST             }
+  { src: 'zone.js/dist/zone.js', inject: 'libs', dest: JS_DEST                      },
+  // { src: 'angular2/bundles/angular2-polyfills.js', inject: 'shims', dest: JS_DEST   },
+  // { src: 'angular2/bundles/angular2.js',  inject: 'libs', dest: JS_DEST             },
+  // { src: 'angular2/bundles/router.js',    inject: 'libs', dest: JS_DEST             },
+  // { src: 'angular2/bundles/http.js',      inject: 'libs', dest: JS_DEST             }
 ]);
 
 export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependencies([
@@ -55,7 +55,7 @@ export const PROD_NPM_DEPENDENCIES: InjectableDependency[] = normalizeDependenci
   { src: 'reflect-metadata/Reflect.js', inject: 'shims'                             },
   { src: 'es6-shim/es6-shim.min.js', inject: 'shims'                                },
   { src: 'systemjs/dist/system.js', inject: 'shims'                                 },
-  { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'libs'               },
+  // { src: 'angular2/bundles/angular2-polyfills.min.js', inject: 'libs'               },
 ]);
 
 export const DEV_DEPENDENCIES   = DEV_NPM_DEPENDENCIES.concat(APP_ASSETS);

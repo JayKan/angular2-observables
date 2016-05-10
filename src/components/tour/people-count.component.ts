@@ -1,5 +1,5 @@
-import { Component, OnInit, EventEmitter, ViewEncapsulation } from 'angular2/core';
-import { FORM_DIRECTIVES, Control, ControlGroup, FormBuilder, Validators } from 'angular2/common';
+import { Component, OnInit, EventEmitter, ViewEncapsulation } from '@angular/core';
+import { FORM_DIRECTIVES, Control, ControlGroup, FormBuilder, Validators } from '@angular/common';
 
 @Component({
   selector: 'people-count',

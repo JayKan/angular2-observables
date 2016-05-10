@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from 'angular2/core';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { Neighborhood } from './neighborhood.model';
 import { NeighborhoodService } from './neighborhood.service';
 import { SocketService } from './socket.service';

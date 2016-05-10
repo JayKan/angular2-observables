@@ -1,4 +1,4 @@
-import { Injectable } from 'angular2/core';
+import { Injectable } from '@angular/core';
 import { Neighborhood } from './neighborhood.model';
 import { Observable, Subject } from 'rxjs/Rx';
 // import { SocketService } from './socket.service';
