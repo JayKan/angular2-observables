@@ -40,22 +40,22 @@
 <!-- shims:js -->
 <!-- endinject -->
 
-<script>
-  System.config({
-    "defaultJSExtensions": true,
-    "transpiler": "typescript",
-    "map": {
-      "rxjs": "/node_modules/rxjs/Rx.js",
-      'angularfire2': "/node_modules/angularfire2"
-    },
-    "packages": {
-      "angularfire2": {
-        defaultExtension: 'js',
-        main: 'angularfire2.js'
-      }
-    }
-  });
-</script>
+<!--<script>-->
+  <!--System.config({-->
+    <!--"defaultJSExtensions": true,-->
+    <!--"transpiler": "typescript",-->
+    <!--"map": {-->
+      <!--"rxjs": "/node_modules/rxjs/Rx.js",-->
+      <!--'angularfire2': "/node_modules/angularfire2"-->
+    <!--},-->
+    <!--"packages": {-->
+      <!--"angularfire2": {-->
+        <!--defaultExtension: 'js',-->
+        <!--main: 'angularfire2.js'-->
+      <!--}-->
+    <!--}-->
+  <!--});-->
+<!--</script>-->
 
 <!-- libs:js -->
 <!-- endinject -->
@@ -63,7 +63,8 @@
 <!-- inject:js -->
 <!-- endinject -->
 
-<script>
+<script type="text/javascript" src="./system.config.js"></script>
+<script type="text/javascript">
   System.import('bootstrap').then(null, console.error.bind(console));
 </script>
 </body>
