@@ -1,6 +1,5 @@
-import { Directive } from 'angular2/core';
-import { ViewContainerRef, TemplateRef } from 'angular2/src/core/linker';
-import { isPresent, isBlank } from 'angular2/src/facade/lang';
+import { Directive, ViewContainerRef, TemplateRef } from '@angular/core';
+
 
 @Directive({
   selector: '[ng-when][ng-when-is]',

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from 'angular2/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { observableFirebaseObject, observableFirebaseArray } from './observableFirebase';
 import { NgWhen } from './ngWhen';

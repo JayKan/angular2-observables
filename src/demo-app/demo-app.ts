@@ -1,6 +1,6 @@
-import { Component, ViewEncapsulation} from 'angular2/core';
-import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from 'angular2/router';
-import { HTTP_PROVIDERS } from 'angular2/http';
+import { Component, ViewEncapsulation} from '@angular/core';
+import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from '@angular/router-deprecated';
+import { HTTP_PROVIDERS } from '@angular/http';
 import { TypeHeadComponent } from '../components/typehead/typehead';
 import { TouristComponent } from '../components/tour/tour';
 import { WeatherDemo } from '../components/weather/weather';

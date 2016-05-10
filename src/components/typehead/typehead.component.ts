@@ -1,7 +1,7 @@
-import { Component, OnInit, ViewEncapsulation } from 'angular2/core';
-import { Control, FORM_DIRECTIVES } from 'angular2/common';
+import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Control, FORM_DIRECTIVES } from '@angular/common';
 import { Observable } from 'rxjs/Observable';
-import { Http } from 'angular2/http';
+import { Http } from '@angular/http';
 import { VIDEO_CARD_DIRECTIVES } from '../../core/card/card';
 import 'rxjs/Rx';
 
