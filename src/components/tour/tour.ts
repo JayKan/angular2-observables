@@ -8,19 +8,21 @@ import { Observable } from 'rxjs/Rx';
 @Component({
   selector: 'tourist',
   template: `
-  <div class="container">      
-    <h4>Tourist on a Trip</h4>    
-    <button class="btn btn-default btn-primary margin-bottom-20" (click)="add()">Add Another Tour</button>
-    <div class="row" *ngFor="#neighborhood of $neighborhoods | async">
-      <div class="col-md-12">
-        <span class="value">
-          <strong>Model value</strong>: {{ neighborhood.TTAmount }}
-        </span>
-        <people-count
-         [tt-title]="neighborhood.name"
-         [tt-amount]="neighborhood.TTAmount"
-         (tt-change)="neighborhood.setTTAmount($event.amount)">
-        </people-count>
+  <div id="tourist-demo">
+    <div class="container padding-0">      
+      <h4>Tourist on a Trip</h4>    
+      <button class="btn btn-default btn-primary margin-bottom-20" (click)="add()">Add Another Tour</button>
+      <div class="row" *ngFor="#neighborhood of $neighborhoods | async">
+        <div class="col-md-12">
+          <span class="value">
+            <strong>Model value</strong>: {{ neighborhood.TTAmount }}
+          </span>
+          <people-count
+           [tt-title]="neighborhood.name"
+           [tt-amount]="neighborhood.TTAmount"
+           (tt-change)="neighborhood.setTTAmount($event.amount)">
+          </people-count>
+        </div>
       </div>
     </div>
   </div>

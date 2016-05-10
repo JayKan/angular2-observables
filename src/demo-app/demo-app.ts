@@ -1,5 +1,5 @@
 import { Component, ViewEncapsulation} from '@angular/core';
-import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig } from '@angular/router-deprecated';
+import { ROUTER_PROVIDERS, ROUTER_DIRECTIVES, RouteConfig, Router } from '@angular/router-deprecated';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { TypeHeadComponent } from '../components/typehead/typehead';
 import { TouristComponent } from '../components/tour/tour';
@@ -22,10 +22,13 @@ import { WeatherDemo } from '../components/weather/weather';
 
 export class AppComponent {
   menuItems: Array<any>;
-  
-  constructor() {
+
+  constructor(private _router: Router) {
     this.menuItems = [
       {caption: 'Typehead', link: ['Typehead']},
     ]
+  }
+  isActive(instruction: string[]): boolean {
+    return this._router.isRouteActive(this._router.generate(instruction));
   }
 }

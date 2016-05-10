@@ -13,3 +13,14 @@
 .no-style .ng-invalid {
     border-left: 1px  solid #CCC
 }
+
+
+div.container ul {
+    list-style: none;
+}
+div.container ul li a.active {
+    color: #267ED5;
+}
+.padding-0 {
+    padding: 0
+}
