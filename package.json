@@ -4,7 +4,7 @@
   "description": "Learning observables with Angular2 examples",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "demo-app": "gulp serve.dev"
+    "start": "gulp serve.dev"
   },
   "author": "Jay Kan",
   "license": "MIT",
