@@ -9,12 +9,11 @@
     <div class="page-content layout-padding">
       <div class="container padding-0">
         <ul>
-          <li><a [class.active]="isActive(['Typehead'])" [routerLink]="['Typehead']">Youtube Search Example</a></li>
-          <li><a [class.active]="isActive(['Weather'])" [routerLink]="['Weather']">Firebase Weather Example</a></li>
-          <li><a [class.active]="isActive(['Tourist'])" [routerLink]="['Tourist']">Tourist Example</a></li>
+          <li><a [routerLink]="['typehead']">Youtube Search Example</a></li>
+          <li><a [routerLink]="['tourist']">Firebase Weather Example</a></li>
+          <li><a [routerLink]="['weather']">Tourist Example</a></li>
         </ul>
       </div>
-
       <router-outlet></router-outlet>
     </div>
   </main>
