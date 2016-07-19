@@ -1,4 +1,5 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
+import { Type, enableProdMode } from '@angular/core';
 import { AppComponent } from './demo-app/demo-app';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { APP_ROUTER_PROVIDERS } from './app.routes';
@@ -13,7 +14,10 @@ import 'rxjs/add/operator/switchMap';
 import 'rxjs/observable/of';
 import 'rxjs/observable/interval';
 
-bootstrap(AppComponent, [
+// enable prod mode for faster renders
+enableProdMode();
+
+bootstrap(<Type>AppComponent, [
   HTTP_PROVIDERS,
   APP_ROUTER_PROVIDERS
 ])
